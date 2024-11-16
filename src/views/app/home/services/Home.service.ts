@@ -9,5 +9,7 @@ export default class HomeService {
     return this.classInstant;
   }
 
-  
+    useGetHotelDestination() {
+      
+  }
 }
