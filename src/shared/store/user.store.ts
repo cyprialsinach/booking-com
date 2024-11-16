@@ -8,7 +8,7 @@ export default function useUser() {
     setUser({
       ...user!,
       user: {
-        ...user?.user!,
+        ...user.user!,
         authenticated: true,
       },
     });
@@ -18,7 +18,7 @@ export default function useUser() {
     setUser({
       ...user!,
       user: {
-        ...user?.user!,
+        ...user.user!,
         authenticated: false,
       },
     });

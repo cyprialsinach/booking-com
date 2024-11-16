@@ -1,22 +1,20 @@
-// import Layout from "@renderer/components/Layout";
-// import DeviceSetUp from "@renderer/views/auth/DeviceSetUp";
-// import Login from "@renderer/views/auth/Login";
-// import { RouteObject } from "react-router-dom";
-// import { authRoutes } from "./routes";
-// import Success from "@renderer/views/auth/Success";
+import { RouteObject } from "react-router-dom";
+import { authRoutes } from "./routes";
+import Layout from "../../components/Layout";
+import Login from "../../views/auth/Login";
 
-// const AuthRouters: RouteObject[] = [
-//   {
-//     path: "/",
-//     element: <Layout type="auth" />,
-//     // loader: rootLoader,
-//     children: [
-//       {
-//         index: true,
-//         path: authRoutes.login,
-//         element: <Login />,
-//       },
-//     ],
-//   },
-// ];
-// export default AuthRouters;
+const AuthRouters: RouteObject[] = [
+  {
+    path: "/",
+    element: <Layout type="auth" />,
+    // loader: rootLoader,
+    children: [
+      {
+        index: true,
+        path: authRoutes.login,
+        element: <Login />,
+      },
+    ],
+  },
+];
+export default AuthRouters;

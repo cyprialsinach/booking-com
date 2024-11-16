@@ -3,5 +3,8 @@ export const authRoutes = {
 };
 
 export const appRoutes = {
-  homepage: "/",
+  homepage: "/home",
+  hotelPage: '/hotels',
+  flightPage: '/flights',
+  attractionsPage: '/attractions'
 };
