@@ -1,5 +1,5 @@
 import { RouteObject } from "react-router-dom";
-import { appRoutes } from "./routes";
+import { appRoutes, authRoutes } from "./routes";
 import Layout from "../../components/Layout";
 import HomePage from "../../views/app/home/Index";
 import HotelPage from "../../views/app/home/Hotels";
@@ -14,7 +14,7 @@ const AppRouters: RouteObject[] = [
     children: [
       {
         index: true,
-        // path: appRoutes.homepage,
+        path: authRoutes.login,
         element: <HomePage />,
       },
       {

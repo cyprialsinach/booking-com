@@ -3,7 +3,7 @@ export const authRoutes = {
 };
 
 export const appRoutes = {
-  homepage: "/home",
+  homepage: "/",
   hotelPage: '/hotels',
   flightPage: '/flights',
   attractionsPage: '/attractions'
