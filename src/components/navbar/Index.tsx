@@ -11,7 +11,7 @@ import ListCheckIcon from "../../assets/svg/listCheck.svg";
 import HandCoinsIcon from "../../assets/svg/handCoins.svg";
 import BellIcon from "../../assets/svg/bell.svg";
 import BasketIcon from "../../assets/svg/basket.svg";
-import PlusSquareIcon from "../../assets/svg/PlusSquare.svg";
+import PlusSquareIcon from "../../assets/svg/plusSquare.svg";
 
 const navPageLinks: INavLinks[] = [
   {
