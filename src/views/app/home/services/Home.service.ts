@@ -11,5 +11,8 @@ export default class HomeService {
 
     useGetHotelDestination() {
       
-  }
+    }
+    useSearchHotel() {
+        
+    }
 }
