@@ -2,24 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Poppins';
-  src: url('./assets/fonts/Poppins-Regular.ttf');
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./assets/fonts/Poppins-Medium.ttf');
-  font-weight: 500; 
-  font-style: normal; 
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./assets/fonts/Poppins-SemiBold.ttf');
-  font-weight: 600; 
-  font-style: normal; 
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@layer base {
+  html {
+    height: 100vh;
+    font-size: 12px; /* 1rem = 16px */
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+    background-color: #f0f2f5;
+  }
+  .letter-default {
+    letter-spacing: -0.063px;
+  }
+  .letter-tighter {
+  }
+  .letter-tightest {
+  }
+}
+@layer utilities {
+  .btnClass {
+    @apply flex items-center justify-center rounded-[0.5rem] shadow-sm  font-normal focus:outline-none;
+  }
 }

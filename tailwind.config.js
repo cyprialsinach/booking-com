@@ -7,36 +7,34 @@ export default {
         sans: ["Poppins", "sans-serif"],
       },
       fontSize: {
-        sm: ["14px", "22px"],
-        md: ["16px", "24px"],
-        lg: ["18px", "26px"],
-        xl: ["20px", "28px"],
-        xxl: ["24px", "32px"],
-        "2xl": ["28px", "36px"],
-      },
-      letterSpacing: {
-        tightest: "-4%",
-        tighter: "-2%",
-        tight: "-1px",
-        normal: "0",
+        sm: ["0.875rem", "1.375rem"],
+        md: ["1rem", "1.5rem"],
+        lg: ["1.125rem", "1.625rem"],
+        xl: ["1.25rem", "1.75rem"],
+        xxl: ["1.5rem", "2rem"],
+        "2xl": ["1.75rem", "2.25rem"],
       },
       colors: {
         primary: { DEFAULT: "#0D6EFD", 10: "#0054E4", 20: "#0A369D" },
-        greyAsh: { DEFAULT: "#647995", 10: "#676E7E", 100: "#FFDCB9" },
+        greyAsh: {
+          DEFAULT: "#647995",
+          10: "#676E7E",
+          20: "#FFDCB9",
+          30: "#F0F2F5",
+          40: "#98A2B3",
+        },
         black: { DEFAULT: "#1D2433" },
         white: { DEFAULT: "#FFFFFF" },
       },
-      //#B86514
-
+      // #98A2B3
       container: {
         center: true,
         padding: {
           DEFAULT: "1rem",
           sm: "1rem",
-          md: "2rem",
-          lg: "4rem",
-          xl: "5rem",
-          "2xl": "6rem",
+          md: "1.5rem",
+          lg: "2rem",
+          xl: "2.5rem",
         },
       },
       scrollbar: {
