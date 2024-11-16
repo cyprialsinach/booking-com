@@ -33,8 +33,11 @@ import CustomButton from "../../../components/CustomButton";
 import ItinerariesCard from "./_components/ItinerariesCard";
 import FacilitiesUi from "./_components/FacilitiesUi";
 import { appRoutes } from "../../../shared/routes/routes";
+import ChooseLocationModal from "./_components/modals/ChooseLocationModal";
+import React from "react";
 
 const HomePage = () => {
+    const [isLocationOpen, setIsLocationOpen] = React.useState(false);
   const flightFacilities = [
     {
       icon: SuitCaseRolling,
@@ -62,7 +65,9 @@ const HomePage = () => {
       icon: Wine,
       facilityName: "Bar",
     },
-  ];
+    ];
+    
+    
   return (
     <HomeLayout>
       <div className="bg-white p-[1.5rem] grow rounded-[0.25rem]">
@@ -171,14 +176,13 @@ const HomePage = () => {
                   Build, personalize, and optimize your itineraries with our
                   trip planner.
                 </p>
-                <NavLink to={`${appRoutes.hotelPage}`}>
-                  <CustomButton
-                    className="w-full h-[2.875rem] font-medium !rounded-[0.25rem] mt-[2.25rem]"
-                    bgColor="bg-primary"
-                  >
-                    Add Hotels
-                  </CustomButton>
-                </NavLink>
+                <CustomButton
+                  onClick={() => setIsLocationOpen(!isLocationOpen)}
+                  className="w-full h-[2.875rem] font-medium !rounded-[0.25rem] mt-[2.25rem]"
+                  bgColor="bg-primary"
+                >
+                  Add Hotels
+                </CustomButton>
               </div>
               <div className="w-[18rem] rounded-[0.25rem] py-[1rem] px-[0.875rem] bg-primary">
                 <h4 className="font-semibold text-md text-white">Flights</h4>
@@ -344,16 +348,14 @@ const HomePage = () => {
                 />
                 <span className="font-semibold text-white text-lg">Hotels</span>
               </div>
-              <NavLink to={`${appRoutes.hotelPage}`}>
-                {" "}
-                <CustomButton
-                  className="w-[9.563rem] h-[2.875] font-semibold !rounded-[0.25rem]"
-                  bgColor="bg-white"
-                  color="text-black"
-                >
-                  Add Hotels
-                </CustomButton>
-              </NavLink>
+              <CustomButton
+                onClick={() => setIsLocationOpen(!isLocationOpen)}
+                className="w-[9.563rem] h-[2.875] font-semibold !rounded-[0.25rem]"
+                bgColor="bg-white"
+                color="text-black"
+              >
+                Add Hotels
+              </CustomButton>
             </div>
             <ItinerariesCard type="Hotels">
               <div className="flex justify-between pr-[2.625rem] pl-[1rem]">
@@ -546,6 +548,10 @@ const HomePage = () => {
             </ItinerariesCard>
           </div>
         </section>
+        <ChooseLocationModal
+          isOpen={isLocationOpen}
+          setIsOpen={setIsLocationOpen}
+        />
       </div>
     </HomeLayout>
   );
