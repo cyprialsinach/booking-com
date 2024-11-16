@@ -34,15 +34,17 @@
     background-color: #f0f2f5;
   }
   .letter-default {
-    letter-spacing: -0.063px;
+    letter-spacing: -0.063rem;
   }
-  .letter-tighter {
-  }
-  .letter-tightest {
+ .letter-spacing3 {
+    letter-spacing: 0.02rem;
   }
 }
 @layer utilities {
   .btnClass {
-    @apply flex items-center justify-center rounded-[0.5rem] shadow-sm  font-normal focus:outline-none;
+    @apply flex items-center justify-center rounded-[0.5rem] shadow-sm  focus:outline-none;
+  }
+  .navLinkText {
+    @apply text-greyAsh text-md font-medium letter-default
   }
 }

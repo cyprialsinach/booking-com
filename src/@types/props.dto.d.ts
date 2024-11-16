@@ -7,6 +7,10 @@ type LoginDTO = object;
 
 type NavbarDTO = object;
 
+type IItineriesCardDTO = {
+type: 'Flights' | 'Hotels' | 'Activities'
+}
+
 type IInputDTO = {
   type?: "text" | "select";
   leftImage?: ReactNode;
@@ -36,4 +40,5 @@ type IButton = {
   padding?: string;
   isLoading?: boolean;
   isDisabled?: boolean;
+  fontWeight?:string
 };

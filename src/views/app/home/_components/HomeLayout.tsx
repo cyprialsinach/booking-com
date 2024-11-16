@@ -3,10 +3,11 @@ import HomeSidebar from "./HomeSidebar";
 
 const HomeLayout: IAppLayout = ({ children }) => {
   return (
-    <main className="pt-[2.5rem] grow mt-[8.375rem]">
+    <main className="py-[2.5rem] grow mt-[8.375rem]">
       <div className="container h-full">
         <div className="h-full">
-          <aside className="fixed w-[18.75rem]">
+          {/* CALCULATE SIDEBAR HEIGHT */}
+          <aside className="fixed w-[18.75rem] h-[calc(100%-10.875rem)] scrollbar">
             <HomeSidebar />
           </aside>
           <div className="ml-[22.75rem]">{children}</div>

@@ -1,9 +1,8 @@
-import React from "react";
 import Logo from "../../assets/svg/logo.svg";
 import Avatar from "../../assets/img/avatar.png";
 import SearchOnNav from "./components/SearchOnNav";
 import NavLists from "./components/NavLists";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ArrowDownIcon from "../../assets/svg/arrowDown.svg";
 import HomeIcon from "../../assets/svg/home.svg";
 import ChartPieIcon from "../../assets/svg/chartPie.svg";
@@ -59,9 +58,8 @@ const navLinks: INavLinks[] = [
   },
 ];
 const Navbar: INavbar = () => {
-  
   return (
-    <nav className="w-full bg-white fixed">
+    <nav className="w-full bg-white fixed z-50">
       <div className="container">
         <div className="flex items-center justify-between h-[8.375rem] py-[2.5rem] gap-[1.75rem]">
           <div className="flex items-center gap-[1.75rem]">
@@ -74,23 +72,35 @@ const Navbar: INavbar = () => {
           </div>
           <div className="flex items-center gap-[1.75rem]">
             <NavLists navPageLinks={navPageLinks} />
-            <div className="flex items-center gap-[1.5rem]">
+            <ul className="flex items-center gap-[1.5rem]">
               {navLinks.map(({ label, icon }: INavLinks, key: number) => (
-                <div className="flex flex-col items-center" key={key}>
-                  <img src={icon} className="w-[2rem] h-[2rem]" />
-                  <span className="mt-[0.5rem] text-greyAsh font-medium text-md letter-default">
-                    {label}
-                  </span>
-                </div>
+                <li key={key}>
+                  <Link to="/" className="flex flex-col items-center">
+                    <img
+                      src={icon}
+                      className="w-[2rem] h-[2rem]"
+                      alt={`${label} icon`}
+                    />
+                    <span className="mt-[0.5rem] text-greyAsh font-medium text-md letter-default">
+                      {label}
+                    </span>
+                  </Link>
+                </li>
               ))}
-              <div className="flex items-center gap-[0.938rem]">
+              <Link to="/" className="flex items-center gap-[0.938rem]">
+                
                 <img
                   src={Avatar}
-                  className="w-[3.25rem] h-[3.25rem] rounded-full"
+                  className="w-[3.25rem] h-[3.25rem] rounded-full flex-shrink-0"
+                  alt="profile picture"
                 />
-                <img src={ArrowDownIcon} className="w-[1.5rem] h-[1.5rem]" />
-              </div>
-            </div>
+                <img
+                  src={ArrowDownIcon}
+                  className="w-[1.5rem] h-[1.5rem]"
+                  alt="profile dropdown"
+                />
+              </Link>
+            </ul>
           </div>
         </div>
       </div>

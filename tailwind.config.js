@@ -15,18 +15,29 @@ export default {
         "2xl": ["1.75rem", "2.25rem"],
       },
       colors: {
-        primary: { DEFAULT: "#0D6EFD", 10: "#0054E4", 20: "#0A369D" },
+        primary: {
+          DEFAULT: "#0D6EFD",
+          10: "#0054E4",
+          20: "#0A369D",
+          30: "#E7F0FF",
+          40: "#000031",
+        },
         greyAsh: {
           DEFAULT: "#647995",
           10: "#676E7E",
           20: "#FFDCB9",
           30: "#F0F2F5",
           40: "#98A2B3",
+          50: "#D0D5DD",
+          60: "#344054",
+          70: "#E4E7EC",
         },
-        black: { DEFAULT: "#1D2433" },
+        black: { DEFAULT: "#1D2433", 10: "#000000" },
         white: { DEFAULT: "#FFFFFF" },
+        yellow: { DEFAULT: "#FEF4E6", 10: "#7A4504" },
+        red: { DEFAULT: "", 10: "#FBEAE9" },
       },
-      // #98A2B3
+      // ##676E7E
       container: {
         center: true,
         padding: {
@@ -34,7 +45,8 @@ export default {
           sm: "1rem",
           md: "1.5rem",
           lg: "2rem",
-          xl: "2.5rem",
+          xl: "2rem",
+          "2xl": "2.5rem",
         },
       },
       scrollbar: {

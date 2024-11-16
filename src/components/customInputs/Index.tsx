@@ -1,11 +1,10 @@
 import StringInput from "./StringInput";
-import SelectInput from "./SelectInput";
-import React from 'react'
+// import SelectInput from "./SelectInput";
 
 const CustomInput: IInput = (props) => {
-    const { type, ...restProps } = props;
+    const { ...restProps } = props;
     
-  if (type === "select") return <SelectInput {...restProps} />;
+//   if (type === "select") return <SelectInput {...restProps} />;
 
   return <StringInput {...restProps} />;
 };

@@ -1,7 +1,10 @@
 import { RouteObject } from "react-router-dom";
-import { authRoutes } from "./routes";
+import { appRoutes } from "./routes";
 import Layout from "../../components/Layout";
 import HomePage from "../../views/app/home/Index";
+import HotelPage from "../../views/app/home/Hotels";
+import AttractionsPage from "../../views/app/home/Attractions";
+import FlightPage from "../../views/app/home/Flights";
 
 const AppRouters: RouteObject[] = [
   {
@@ -11,8 +14,20 @@ const AppRouters: RouteObject[] = [
     children: [
       {
         index: true,
-        path: authRoutes.login,
+        // path: appRoutes.homepage,
         element: <HomePage />,
+      },
+      {
+        path: appRoutes.hotelPage,
+        element: <HotelPage />,
+      },
+      {
+        path: appRoutes.flightPage,
+        element: <FlightPage />,
+      },
+      {
+        path: appRoutes.attractionsPage,
+        element: <AttractionsPage />,
       },
     ],
   },

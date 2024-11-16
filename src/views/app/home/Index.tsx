@@ -1,364 +1,551 @@
 import HomeLayout from "./_components/HomeLayout";
+import BannerImg from "../../../assets/img/banner.png";
+import ArrowBackIcon from "../../../assets/svg/arrowBack.svg";
+import ArrowRightIcon from "../../../assets/svg/arrowRight.svg";
+import CalenderYellowIcon from "../../../assets/svg/calender.svg";
+import UserPlus from "../../../assets/svg/userPlus.svg";
+import DotThree from "../../../assets/svg/dotThree.svg";
+import SettingIcon from "../../../assets/svg/gearSix.svg";
+import AirPlaneInFlightIcon from "../../../assets/svg/airplainInFlight.svg";
+import HotelIcon from "../../../assets/svg/warehouse.svg";
+import ActivitiesIcon from "../../../assets/svg/roadHorizonWhite.svg";
+import AmericanAirline from "../../../assets/svg/americanAirlines.svg";
+import AirplaneTakeoff from "../../../assets/svg/airplaneTakeoff.svg";
+import AirplaneLanding from "../../../assets/svg/airplaneLanding.svg";
+import Naira from "../../../assets/svg/naira.svg";
+import Duration from "../../../assets/svg/duration.svg";
+import SuitCaseRolling from "../../../assets/svg/suitcaseRolling.svg";
+import FilmSlate from "../../../assets/svg/filmSlate.svg";
+import ForkKnife from "../../../assets/svg/forkKnife.svg";
+import Usb from "../../../assets/svg/usb.svg";
+import MapPin from "../../../assets/svg/mapPin.svg";
+import Star from "../../../assets/svg/star.svg";
+import Bed from "../../../assets/svg/bed.svg";
+import Pool from "../../../assets/svg/swimmingPool.svg";
+import Wine from "../../../assets/svg/wine.svg";
+import CalenderBlank from "../../../assets/svg/calenderBlank.svg";
+import CircleUp from "../../../assets/svg/circleUp.svg";
+import CircleDown from "../../../assets/svg/circleDown.svg";
+import Clock from "../../../assets/svg/clock.svg";
+import Avatar2 from "../../../assets/img/avatar2.png";
+import { Link, NavLink } from "react-router-dom";
+import CustomButton from "../../../components/CustomButton";
+import ItinerariesCard from "./_components/ItinerariesCard";
+import FacilitiesUi from "./_components/FacilitiesUi";
+import { appRoutes } from "../../../shared/routes/routes";
 
 const HomePage = () => {
+  const flightFacilities = [
+    {
+      icon: SuitCaseRolling,
+      facilityName: "Baggage: 20kg, Cabin Baggage: 8kg",
+    },
+    {
+      icon: FilmSlate,
+      facilityName: "In flight entertainment",
+    },
+    {
+      icon: ForkKnife,
+      facilityName: "In flight meal",
+    },
+    {
+      icon: Usb,
+      facilityName: "USB Port",
+    },
+  ];
+  const hotelFacilities = [
+    {
+      icon: Pool,
+      facilityName: "Pool",
+    },
+    {
+      icon: Wine,
+      facilityName: "Bar",
+    },
+  ];
   return (
     <HomeLayout>
       <div className="bg-white p-[1.5rem] grow rounded-[0.25rem]">
-        <h1>
-          <p>
-            Lorem ipsum dolor sit amet. Non quas galisum sed itaque velit qui
-            ullam dignissimos non obcaecati minima et error quaerat ut error
-            atque ut internos neque. Et quisquam quasi id obcaecati illo non
-            corrupti beatae eos consequatur laudantium ut expedita temporibus.
-            Eos aspernatur nesciunt sed quia ullam qui quia dolorem. Est alias
-            repellat 33 repudiandae dolor hic libero fugit aut perspiciatis
-            ullam aut illo error et voluptas facilis et sequi consequatur. Ut
-            quia repudiandae nam atque voluptate 33 dolorem itaque At neque illo
-            ad eligendi cupiditate qui porro explicabo. Id voluptatem
-            perspiciatis sit earum galisum aut optio voluptas qui quia numquam
-            id galisum tempore ut possimus pariatur. Et harum amet aut
-            doloremque quae sed exercitationem possimus eum fuga deserunt aut
-            libero dolores? Non laborum sint ea nulla voluptates non
-            exercitationem itaque. Ea aspernatur quos ab voluptate quas id omnis
-            necessitatibus aut modi sapiente et laborum rerum et aliquam
-            inventore. Aut deleniti omnis et dicta aliquid est facere dolorem
-            nam odio quos et omnis similique sed eius inventore ut molestias
-            consectetur. Ex numquam reiciendis quo culpa voluptate ex earum
-            voluptas rem corrupti sunt et voluptatibus rerum 33 minus ipsa.{" "}
+        <header>
+          <section>
+            <div className="relative h-[12.5rem] rounded-[0.25rem] overflow-hidden">
+              <img
+                src={BannerImg}
+                className="absolute w-full h-full"
+                alt="header banner image"
+              />
+              <Link to="/">
+                <img
+                  src={ArrowBackIcon}
+                  className="absolute left-[1.5rem] top-[1.5rem] w-[3rem] h-[3rem]"
+                  alt="go back"
+                />
+              </Link>
+            </div>
+            <div className=" flex justify-between mt-[1.25rem]">
+              <div>
+                <div className="flex items-center gap-[0.25rem]">
+                  <img
+                    src={CalenderYellowIcon}
+                    className="w-[1rem] h-[1rem] mb-[0.063rem]"
+                    alt="calender"
+                  />
+                  <span className="font-medium text-sm letter-spacing3 text-yellow-10">
+                    21 March 2024
+                  </span>
+                  <img
+                    src={ArrowRightIcon}
+                    className="w-[1rem] h-[1rem] mb-[0.063rem]"
+                    alt="calender"
+                  />
+                  <span className="font-medium text-sm letter-spacing3 text-yellow-10">
+                    21 April 2024
+                  </span>
+                </div>
+                <h2 className="text-black-10 font-semibold text-xxl mt-[0.25rem]">
+                  Bahamas Family Trip
+                </h2>
+                <div className="flex items-center gap-[0.25rem]">
+                  <span className="text-greyAsh-10 font-medium text-md">
+                    New York, United States of America
+                  </span>
+                  <div className="bg-greyAsh-50 w-[0.125rem] h-[1rem]" />
+                  <span className="text-greyAsh-10 font-medium text-md">
+                    Solo Trip
+                  </span>
+                </div>
+              </div>
+              <div className="grid grid-row-3 grid-flow-col items-center gap-[0.5rem]">
+                <CustomButton
+                  className="w-[10rem] h-[2.875rem] !rounded-[0.25rem]"
+                  bgColor="bg-primary-30"
+                >
+                  <img
+                    src={UserPlus}
+                    className="w-[1.25rem] h-[1.25rem] row-start-1 "
+                    alt="add user"
+                  />
+                </CustomButton>
+                <div className="mt-[1.5rem] flex items-center row-start-2 ml-auto">
+                  <img
+                    src={Avatar2}
+                    className="w-[2.5rem] h-[2.5rem] rounded-full flex-shrink-0"
+                    alt="user profile"
+                  />
+                  <div className="w-[1.938rem] h-[0.125rem] rounded-[0.5rem] bg-primary-30" />
+                  <Link
+                    to="/"
+                    className="w-[2.5rem] h-[2.5rem] rounded-full flex-shrink-0 border-[0.125rem] border-primary-30 flex"
+                  >
+                    <img
+                      src={SettingIcon}
+                      className="w-[1rem] h-[1rem] m-auto"
+                      alt="setting"
+                    />
+                  </Link>
+                </div>
+                <img
+                  src={DotThree}
+                  className="w-[2rem] h-[2rem row-start-1"
+                  alt="add user"
+                />
+              </div>
+            </div>
+            <div className="flex items-center gap-[0.25rem] mt-[-0.75rem]">
+              <div className="w-[18rem] rounded-[0.25rem] py-[1rem] px-[0.875rem] bg-primary-40">
+                <h4 className="font-semibold text-md text-white">Activities</h4>
+                <p className="font-normal text-sm text-white mt-[0.5rem]">
+                  Build, personalize, and optimize your itineraries with our
+                  trip planner.
+                </p>
+                <CustomButton
+                  className="w-full h-[2.875rem] font-medium !rounded-[0.25rem] mt-[2.25rem]"
+                  bgColor="bg-primary"
+                >
+                  Add Activities
+                </CustomButton>
+              </div>
+              <div className="w-[18rem] rounded-[0.25rem] py-[1rem] px-[0.875rem] bg-primary-30">
+                <h4 className="font-semibold text-md text-black-10">Hotels</h4>
+                <p className="font-normal text-sm text-black mt-[0.5rem]">
+                  Build, personalize, and optimize your itineraries with our
+                  trip planner.
+                </p>
+                <NavLink to={`${appRoutes.hotelPage}`}>
+                  <CustomButton
+                    className="w-full h-[2.875rem] font-medium !rounded-[0.25rem] mt-[2.25rem]"
+                    bgColor="bg-primary"
+                  >
+                    Add Hotels
+                  </CustomButton>
+                </NavLink>
+              </div>
+              <div className="w-[18rem] rounded-[0.25rem] py-[1rem] px-[0.875rem] bg-primary">
+                <h4 className="font-semibold text-md text-white">Flights</h4>
+                <p className="font-normal text-sm text-white mt-[0.5rem]">
+                  Build, personalize, and optimize your itineraries with our
+                  trip planner.
+                </p>
+                <NavLink to={`${appRoutes.flightPage}`}>
+                  {" "}
+                  <CustomButton
+                    className="w-full h-[2.875rem] font-medium !rounded-[0.25rem] mt-[2.25rem]"
+                    bgColor="bg-white"
+                    color="text-primary"
+                  >
+                    Add Flights
+                  </CustomButton>
+                </NavLink>
+              </div>
+            </div>
+          </section>
+        </header>
+
+        <section className="mt-[5.625rem]">
+          <h4 className="text-xl text-black font-semibold letter-default">
+            Trip itineraries
+          </h4>
+          <p className="text-greyAsh font-medium text-sm letter-default">
+            Your trip itineraries are placed here
           </p>
-          <p>
-            Et voluptatem rerum hic odio ullam non dolorum soluta sed nobis
-            nihil et dolores labore. Et deleniti dolor vel illum praesentium sit
-            consequatur repudiandae et quos nemo. Ad totam molestiae nam laborum
-            ipsam ut ratione necessitatibus ut minima sint ut ipsum quisquam!
-            Non praesentium voluptate aut voluptatem suscipit hic voluptatibus
-            internos qui illum accusamus eum vero ipsum et molestiae omnis sit
-            harum autem? Aut autem nobis ea mollitia autem At voluptas quaerat
-            aut animi vitae in molestiae consequatur aut eligendi explicabo 33
-            dolorum soluta! Nam enim natus et quos voluptates et alias Quis ex
-            esse autem sit quia illum est dolorum nesciunt. Quo fugit quia et
-            temporibus labore aut suscipit dolore ut internos iste aut assumenda
-            voluptatum. Est corrupti culpa et omnis maxime a quia consequatur
-            aut placeat voluptatibus ut quos quibusdam aut eveniet provident et
-            temporibus laudantium. Cum sunt voluptates est repellendus dicta qui
-            earum nemo eum eaque voluptatem eum molestiae voluptatem. Non illo
-            officia et nisi omnis ad autem nulla vel autem temporibus non
-            dignissimos vero 33 praesentium maxime. Ut quod adipisci et internos
-            vero non unde officiis quo galisum ipsum aut cumque quisquam aut
-            vero dolorem.{" "}
-          </p>
-          <p>
-            Est ratione voluptas sed provident magnam sed galisum unde 33 sint
-            ipsam qui dolor provident et rerum accusantium aut adipisci
-            temporibus. Quo velit nisi sit laudantium vero quo atque rerum est
-            voluptas commodi ea harum cumque et aliquam porro ab impedit facere.
-            Aut numquam eligendi vel ullam nostrum qui molestiae nemo aut ipsam
-            nulla et molestiae reprehenderit. Qui consequatur eligendi ea minima
-            excepturi aut voluptatem voluptas non incidunt ipsam? Ut ducimus
-            nesciunt rem facere labore id pariatur dicta rem inventore
-            aspernatur ut corporis quod et dolorem delectus. Id exercitationem
-            incidunt eum necessitatibus possimus id blanditiis itaque quo unde
-            dolorem qui voluptatem optio. Aut repellat explicabo aut possimus
-            neque sit consequatur architecto ad numquam consequatur. A earum
-            sunt aut nulla enim qui tempora dignissimos qui ratione dolorum. Hic
-            nemo perspiciatis est galisum labore et numquam repellat ea deserunt
-            animi et quia omnis aut dolorem dicta et facilis quibusdam. Ut
-            voluptatem soluta est deserunt cupiditate sed quia rerum id
-            praesentium aliquam ut suscipit ipsam. Est quia facere ut autem
-            soluta ea consectetur eius ut provident ullam 33 voluptatem Quis quo
-            placeat consectetur? Et accusamus labore aut nostrum autem est sint
-            doloremque et voluptatem tenetur aut ratione placeat. Ut consequatur
-            illo et omnis cumque et similique nesciunt sit suscipit impedit! At
-            autem tempore eos dignissimos necessitatibus hic aspernatur
-            laudantium et rerum unde ab voluptatem numquam non adipisci facilis.{" "}
-          </p>
-          <p>
-            Eos quisquam maxime eos veniam vero et quae dicta in consequatur
-            praesentium et odio totam sed esse repellat. Rem voluptates dolor
-            vel dolore consequatur id omnis dignissimos quo itaque earum. Est
-            eveniet dolor ea voluptate ipsum sit sint odio nam laudantium sint
-            qui magni dolorum est iure autem hic quaerat sint? Hic quia
-            quibusdam quo itaque quibusdam aut reprehenderit placeat. Aut totam
-            blanditiis qui enim iure qui veritatis molestias a minus amet et
-            fugit veritatis aut doloremque ipsa aut quia nulla. Et iste internos
-            eum consequatur pariatur rem excepturi dolorem sed dolorem molestiae
-            in accusamus dolores. Est sunt temporibus aut consequatur Quis qui
-            voluptatem voluptatum et laborum eaque non deleniti praesentium? A
-            recusandae alias eum consequatur odio qui rerum consequatur quo quia
-            internos. Et illo repudiandae ut voluptas sint qui quod excepturi
-            qui temporibus harum sed atque laudantium est labore aperiam ad
-            alias atque. A error placeat ab nulla enim aut molestiae aspernatur
-            et velit voluptatem id consequatur libero et quae consequatur ut
-            asperiores atque. Ab sint internos in molestiae aliquam nam rerum
-            quos et commodi quidem eum consequatur praesentium ut dolorem nemo
-            est laboriosam cumque. Qui quod accusantium eum architecto nulla est
-            iure voluptate. A quasi cupiditate At internos laudantium et
-            voluptates deserunt qui odit internos. Et Quis obcaecati vel quod
-            consequatur et aliquam laborum aut suscipit aspernatur in dicta
-            distinctio.{" "}
-          </p>
-          <p>
-            Et sequi obcaecati sed omnis aspernatur et nostrum exercitationem!
-            Aut accusantium fugiat sed itaque internos est delectus placeat et
-            asperiores facilis qui cupiditate voluptatem. Et sunt quos ut
-            laboriosam omnis rem incidunt reprehenderit vel ducimus temporibus.
-            Id sunt culpa eos quia adipisci et quam labore vel omnis voluptatem
-            et fugit laudantium. Sed accusantium enim qui quia quia sit soluta
-            accusamus! Et commodi aliquid eos dolore quasi qui quod culpa sed
-            velit numquam et iusto eius in voluptatibus nostrum nam facilis
-            autem. Et sint nihil hic optio voluptas non voluptatem itaque id
-            beatae voluptas eos eligendi dolorem aut quia nostrum. Qui galisum
-            laboriosam qui ullam rerum id eligendi molestiae aut possimus
-            quisquam eum nihil repellendus. Eum aliquid illo vel impedit quia ut
-            culpa necessitatibus At necessitatibus nemo ut exercitationem
-            reprehenderit et impedit laborum. Non ducimus Quis aut vero deserunt
-            aut quia aspernatur et nesciunt rerum 33 veniam cupiditate qui
-            eveniet enim. Id alias quod non velit expedita sed aperiam mollitia
-            a praesentium quasi et molestiae mollitia.{" "}
-          </p>
-          <p>
-            Et molestiae rerum aut commodi quaerat qui consequatur quia sit
-            praesentium saepe. Hic aliquam voluptatem non esse suscipit et ullam
-            quam sed officia velit et ipsam sunt. Est iste enim sed nulla nihil
-            ea nihil doloremque ut maxime minus et alias perferendis. 33
-            possimus esse aut recusandae quos nam consequatur delectus ut
-            suscipit galisum et laborum laudantium et possimus vitae non
-            consequatur autem? Est molestiae quisquam aut distinctio veritatis
-            cum debitis facere non odio reprehenderit in minus exercitationem
-            eum vitae autem ad molestiae libero. Qui suscipit quod eum porro
-            illo ut fugit voluptatem eum iure aperiam ab dignissimos sunt qui
-            rerum omnis non sunt enim. Qui voluptatem placeat eos galisum
-            dolores vel voluptas voluptatem! Aut dolores galisum et sapiente
-            maxime est velit repudiandae aut voluptate corporis sit magnam
-            voluptas eos eligendi corrupti.{" "}
-          </p>
-          <p>
-            Et sequi facere sit culpa consequatur et quam eligendi sed placeat
-            ipsam qui amet sint. Sed consequuntur odio qui rerum assumenda sed
-            earum odit aut commodi ullam est corporis illo ut molestiae porro?
-            Et ducimus nisi id harum nisi aut molestiae delectus et inventore
-            dolore a sint nostrum. Quo ullam consequuntur qui fuga iusto et sint
-            impedit in enim consequuntur qui modi blanditiis. Aut nisi ullam eum
-            nisi voluptas 33 corporis accusamus rem enim totam ut perferendis
-            itaque ab maiores sunt. Cum necessitatibus esse vel ipsa enim est
-            unde sunt non ipsum consequatur est sint vitae sed tempora rerum hic
-            itaque excepturi. Ea voluptatum explicabo aut voluptatem iste aut
-            repudiandae repudiandae aut animi eius vel assumenda ratione ea
-            incidunt aspernatur? Ut voluptatem ipsa ex saepe iste quo sunt
-            voluptatem non consectetur rerum aut temporibus labore et
-            consequatur voluptatibus. 33 dolores blanditiis vel perferendis
-            consequuntur ea necessitatibus deserunt et dolor unde in culpa
-            nostrum et quasi rerum et eius consequatur. Ut voluptate perferendis
-            sed inventore iusto est facere obcaecati et recusandae ducimus. Qui
-            inventore voluptates qui saepe recusandae et minus necessitatibus et
-            odio voluptas qui delectus repellendus ex eligendi nulla id cumque
-            consequatur.{" "}
-          </p>
-          <p>
-            Et omnis incidunt est recusandae labore ut natus maiores. Et
-            architecto dolor eos veritatis possimus aut rerum dolorem et numquam
-            nemo qui suscipit accusantium. Cum explicabo odio ut fugiat ullam
-            cum aliquid consectetur sit voluptatibus voluptatem qui suscipit
-            necessitatibus. Ad laudantium error eum nesciunt eaque ea eveniet
-            tenetur! Hic labore sunt et error perspiciatis eum culpa voluptates
-            est similique odit in itaque ducimus quo dolores porro est
-            distinctio veniam. Aut asperiores inventore aut distinctio quia 33
-            repellat quibusdam qui quisquam atque. Ad sequi natus id harum
-            molestias et unde fugit ut quia quia. Vel laboriosam animi aut quis
-            odio vel consequuntur odit vel quasi enim?{" "}
-          </p>
-          <p>
-            Et alias voluptatem a ipsam minus ut dolores commodi non nihil fugit
-            qui dignissimos expedita aut voluptas corrupti et voluptatem
-            voluptatem. Cum nemo quasi aut eveniet cumque qui perspiciatis
-            quisquam non aperiam voluptate non velit adipisci ut mollitia eius
-            et omnis pariatur. Et fugiat architecto qui galisum tempora aut
-            repellat exercitationem ea quasi expedita non vero dolor eos beatae
-            eaque. Qui aspernatur Quis aut laboriosam deleniti eos nemo autem.
-            Qui ipsum accusamus non dolores asperiores eos ratione eaque ut
-            itaque dolores aut possimus quia et doloribus soluta et eligendi
-            optio. 33 excepturi veritatis et ipsa obcaecati sit galisum quis qui
-            quidem enim. Et aliquam accusamus eos voluptatem voluptate et
-            aliquid inventore eos nulla recusandae? A obcaecati rerum aut sunt
-            voluptatibus sit saepe odio At galisum dolorem a necessitatibus
-            atque ut nulla eveniet quo dignissimos sunt. Nam repudiandae soluta
-            nam rerum aliquam est omnis quia eum provident ducimus et alias
-            voluptatem aut impedit sequi non repellat tempore. Aut fuga minima
-            in quia voluptates ea molestiae neque est repellendus dolores non
-            fugit galisum. Cum architecto galisum est officiis deserunt aut
-            impedit galisum.{" "}
-          </p>
-          <p>
-            Aut enim deserunt quo nihil deleniti est mollitia quaerat aut
-            officiis fuga! Id ratione optio non mollitia reiciendis eos eligendi
-            eaque est porro porro At aliquid laboriosam ea quia nesciunt. Et
-            vitae atque qui amet dolore et voluptas quod. Et soluta soluta et
-            velit cumque in quam Quis aut sunt reiciendis ut odio eveniet ad
-            atque nihil? Aut distinctio dolore qui laudantium assumenda 33
-            necessitatibus adipisci et assumenda commodi. Ut aspernatur esse et
-            quaerat mollitia eos nostrum laborum. Et delectus exercitationem et
-            dolores rerum ut voluptas omnis et nihil eligendi. Et delectus quis
-            est velit autem et natus doloribus et tempora natus est similique
-            iusto ea sint excepturi.{" "}
-          </p>
-          <p>
-            Nam voluptas maiores non autem deserunt ut esse odit a pariatur
-            itaque ut omnis iusto. Ea error quia qui voluptates commodi ut
-            reiciendis galisum aut harum voluptatum in iure quas. Quo fugit enim
-            aut esse voluptatem et laborum voluptas qui laborum magnam sit
-            ratione velit. Qui totam tempore eos fuga recusandae est dolore
-            repellendus. Ea galisum galisum et nostrum quas est fugiat
-            architecto quo nemo illo. Sed suscipit reiciendis eos rerum quod et
-            tempore iste? Sit autem dolore hic voluptatum animi et obcaecati
-            omnis. Ab reiciendis architecto non similique quia aut quas
-            voluptatem. Ex internos similique ab sint dolore eos sint eaque. Et
-            consequatur corporis non cumque eaque et Quis molestiae sit tenetur
-            ducimus sit suscipit quaerat eum autem enim! Sed debitis nesciunt et
-            voluptatem obcaecati qui aliquid asperiores?{" "}
-          </p>
-          <p>
-            Quo ratione sapiente sit ratione sint eos ullam molestiae est quos
-            commodi. Aut Quis quaerat non temporibus distinctio ut maiores
-            dolore eum magni aliquid non eius maxime est iusto minima aut
-            voluptatem beatae. Et reprehenderit dolores non culpa inventore sit
-            dolore eaque id odit voluptatum. Qui officia accusamus hic animi
-            nulla qui quia reiciendis. Qui quibusdam voluptas sit pariatur neque
-            eum nisi odio ad deleniti quam. Et quisquam repellendus sed iusto
-            voluptatem ut omnis esse aut rerum corporis non voluptas debitis. At
-            omnis eveniet aut sapiente eius est dicta neque 33 dolore quam. Et
-            voluptas dolores aut obcaecati natus ut consectetur modi eum culpa
-            eius.{" "}
-          </p>
-          <p>
-            Ut velit harum in iste dolores sed illum fuga sit unde voluptatem et
-            nemo blanditiis? Aut nulla voluptate et saepe laborum in quas illo
-            id sequi vitae. Qui illum dolor eos tenetur maiores et ducimus
-            voluptatem ut nobis odit et impedit laboriosam. Ut repellendus illo
-            ut atque mollitia id necessitatibus eius est galisum modi quo magnam
-            dolor ut voluptates amet. Et voluptatem voluptatem ea autem quaerat
-            ea pariatur debitis aut deserunt dolore. Qui enim velit quo quia
-            amet ut provident nesciunt. Ut culpa officia ut iure voluptates quo
-            blanditiis omnis. Sit alias voluptatibus sed molestias rerum eum
-            minus ipsam est consequatur dolorum.{" "}
-          </p>
-          <p>
-            Vel rerum molestiae hic veritatis esse eos explicabo vitae. Est
-            reprehenderit temporibus hic laborum officiis qui dicta velit eos
-            accusantium esse ut praesentium autem et repellendus praesentium. Et
-            saepe voluptate a illo quia est reprehenderit quidem. Non earum
-            nihil eum modi ducimus qui necessitatibus architecto ea sapiente
-            pariatur aut assumenda doloribus. Est labore autem et itaque modi At
-            quia galisum sit fugiat magnam. Ut enim quia ea quos aspernatur ut
-            iusto atque At dolore ipsam et asperiores quibusdam! Et fugiat
-            veritatis At eaque deleniti qui excepturi possimus ea inventore
-            explicabo! Ea iure rerum est fugiat fuga qui eligendi maxime aut
-            alias nemo qui unde quia ad minima veritatis. Aut iure blanditiis
-            qui enim quia qui facere iste aut natus quia id dolor debitis. Nam
-            facilis dolores quo aperiam labore ut eligendi voluptas. Eos nihil
-            quos 33 sunt eaque ut nemo fuga et voluptas magnam ea quis illum.{" "}
-          </p>
-          <p>
-            Est galisum tempora qui adipisci impedit ut nulla nemo. Aut modi
-            porro ea facere explicabo et provident explicabo eum Quis facilis.
-            Aut Quis odio ab sint fugiat et accusamus aperiam. Id neque dolorem
-            et officia veniam et dolorem ipsam vel omnis consequatur nam atque
-            harum. Non enim consequatur non blanditiis obcaecati et animi
-            cupiditate sed aperiam laudantium sit dolorem officia ex quibusdam
-            fugiat. Sed modi temporibus est suscipit repudiandae 33 delectus
-            nihil in animi nostrum non repellendus aspernatur qui eligendi
-            tempore. Cum tempora consequatur ut debitis cumque rem quia quis hic
-            praesentium repellendus qui voluptatem quae aut soluta dolor. Et
-            ullam recusandae ut atque libero quo ipsa labore ut quisquam dolore
-            et assumenda quisquam.{" "}
-          </p>
-          <p>
-            Aut rerum aspernatur ut vero minima sit deleniti rerum qui alias
-            laborum quo commodi impedit. Et illum fuga ut dicta doloremque rem
-            culpa unde hic facilis rerum qui deleniti maxime et debitis magni.
-            Rem saepe sint non minima repellat ad repudiandae odit qui omnis
-            omnis est quam quam. A asperiores laborum et quidem placeat aut
-            deserunt porro. Est molestias eius eos assumenda adipisci aut
-            necessitatibus dolorum est quas molestiae ea quaerat voluptates eos
-            ratione nesciunt. Sit harum sint a inventore totam et galisum maxime
-            non consequuntur iste. Quo modi veritatis quo voluptas deleniti ut
-            laboriosam omnis. Id temporibus nihil sit molestiae accusantium aut
-            illo consequatur nam aspernatur nulla non soluta voluptas id fugiat
-            quibusdam non praesentium rerum. Nam consequatur consequuntur qui
-            eligendi tempore ut reiciendis amet aut voluptas quia qui natus
-            obcaecati qui nulla exercitationem est modi voluptas. Rem labore
-            nobis quo dolores minus et similique tenetur. Sed autem doloremque
-            et consectetur officia eos tempore itaque ex voluptate voluptas aut
-            molestias ducimus! Ut enim iste et consequatur odit ab dicta
-            blanditiis eos sint quia? In asperiores corrupti ut galisum iusto
-            non consectetur iure aut consequuntur alias ea magnam praesentium et
-            eligendi impedit. Et adipisci nobis ut dignissimos reiciendis aut
-            perferendis rerum sit similique illo sed Quis dolorum cum natus ipsa
-            aut eaque assumenda!{" "}
-          </p>
-          <p>
-            Aut quidem nemo cum voluptatem voluptates et laborum numquam qui
-            saepe animi sed voluptatem officia ad quas sint. Vel error doloribus
-            ea rerum perferendis aut eveniet expedita ea cumque repudiandae aut
-            quia officiis non porro praesentium. At molestiae impedit non nulla
-            voluptatem et impedit dicta 33 velit nesciunt est explicabo omnis.
-            Aut tenetur corrupti in amet alias aut laborum voluptatem ea dolorum
-            molestiae non sapiente consequatur et consequatur nobis qui
-            perferendis consequatur. Ut maxime quisquam et nostrum quaerat ut
-            error voluptates ut Quis saepe est nesciunt necessitatibus vel
-            quisquam porro ut doloribus doloribus. Et quos distinctio 33 nostrum
-            rerum et dolor possimus et voluptatem error eos possimus explicabo
-            aut ducimus voluptates. Ab beatae earum sit deleniti quod et
-            cupiditate voluptatem nam necessitatibus commodi qui voluptatem
-            minima. Et iure necessitatibus ex optio voluptas aut molestiae sint
-            non galisum omnis qui labore harum eum fugit ipsa?{" "}
-          </p>
-          <p>
-            Sit magnam consequuntur et quasi voluptatem non ipsum aliquid qui
-            earum alias est dolorum dolor et voluptatem galisum. Hic voluptas
-            eligendi id dolores natus sed amet aliquid. Qui praesentium ipsum et
-            impedit tenetur 33 earum delectus eos nulla rerum et quia molestias?
-            Eos cupiditate enim quo voluptas nisi in quam quia et quibusdam
-            error sit laborum tempora. Quo obcaecati deserunt At perspiciatis
-            Quis et consectetur commodi ab doloribus amet. Eos aspernatur nihil
-            a maiores animi in ducimus sapiente. Ea recusandae voluptatem sit
-            quia quod aut quod odio eos doloribus iste vel dolor nemo. Et
-            perspiciatis placeat qui itaque voluptatum sit adipisci incidunt.{" "}
-          </p>
-          <p>
-            In delectus molestiae vel amet soluta est officia aliquid qui
-            dignissimos temporibus sit consequatur maiores. Cum facere nihil eum
-            neque quia eum consequatur architecto qui nobis delectus. A internos
-            vitae et placeat galisum ut voluptatem iste et enim error cum
-            galisum voluptatem. Sit eaque eaque non vero blanditiis vel
-            dignissimos dignissimos et distinctio quas et quisquam voluptas. Sit
-            quia sunt est aspernatur Quis non optio incidunt ut delectus quis
-            sit optio quia! Ut tempora saepe cum voluptatum assumenda quo
-            voluptatem enim 33 facere perferendis. Sed laborum voluptas non
-            laudantium doloribus non eligendi voluptatum id internos blanditiis.
-            Aut natus natus et voluptatem harum ut consequuntur eveniet et
-            quaerat iste eos accusantium molestiae vel suscipit aliquid. Vel
-            asperiores quasi et sunt minima sed galisum possimus ab rerum
-            excepturi. Sit nulla dolor sed reprehenderit dolores in quis autem
-            et eligendi sint aut sint internos qui beatae consequatur sed
-            internos repellat. Aut nemo magnam est ipsa fugiat hic error earum
-            qui totam odio.{" "}
-          </p>
-          <p>
-            Ad sunt placeat nam quidem dolor in mollitia reiciendis est nihil
-            explicabo. Nam autem delectus ut vitae rerum est optio accusamus ut
-            autem temporibus. Ea corporis voluptatum ut excepturi quas et rerum
-            sapiente rem accusantium facere. Rem eveniet excepturi a sunt quam
-            et mollitia sunt sit temporibus soluta est numquam aliquid! Eum
-            dolorem placeat non totam assumenda et consequuntur ratione ut animi
-            ratione sed sequi voluptatum et enim nemo? Est voluptatem porro qui
-            galisum harum ex ipsum illo. Ut rerum sint eos explicabo consequatur
-            ut nihil harum id laboriosam voluptatem. Ut similique veritatis sed
-            incidunt repudiandae sit enim alias qui rerum esse. Qui debitis eius
-            eum earum obcaecati et corrupti laboriosam non rerum esse eum dolor
-            possimus. Et dolor quia qui deserunt optio qui quasi consequatur.
-            Est quibusdam animi ea facere cumque in placeat quisquam?{" "}
-          </p>
-        </h1>
+
+          {/* FLIGHTS */}
+          <div className="mt-[1.75rem] bg-greyAsh-30 pt-[1rem] pb-[3.25rem] px-[1.5rem] rounded-[0.25rem]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-[0.625rem]">
+                <img
+                  src={AirPlaneInFlightIcon}
+                  className="w-[1.5rem] h-[1.5rem]"
+                  alt="flight"
+                />
+                <span className="font-semibold text-black text-lg">
+                  Flights
+                </span>
+              </div>
+              <NavLink to={`${appRoutes.flightPage}`}>
+                <CustomButton
+                  className="w-[9.563rem] h-[2.875] font-semibold !rounded-[0.25rem]"
+                  bgColor="bg-white"
+                  color="text-primary"
+                >
+                  Add Flights
+                </CustomButton>
+              </NavLink>
+            </div>
+            <ItinerariesCard type="Flights">
+              <div className="flex items-center justify-between xl:gap-[2rem] gap-[8.563rem] pl-[1.5rem] pr-[2.625rem] pb-[1.5rem]">
+                <div className="flex items-center gap-[0.75rem]">
+                  <img
+                    src={AmericanAirline}
+                    className="w-[1.5rem] h-[1.5rem]"
+                    alt="american airline"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-xl text-black">
+                      American Airlines
+                    </h4>
+                    <div className="flex items-center gap-[0.75rem] mt-[0.25rem]">
+                      <span className="font-medium text-md text-greyAsh-10">
+                        AA-829
+                      </span>
+                      <div className="w-[0.109rem] h-[0.109rem] bg-greyAsh-10" />
+                      <div className="bg-primary-20 rounded-[0.25rem] px-[0.5rem] py-[0.25rem] flex items-center justify-center">
+                        <span className="text-[0.75rem] font-medium text-white">
+                          First Class
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center xl:gap-[1.2rem] gap-[2.5rem]">
+                  <div>
+                    <h5 className="text-xxl text-black font-semibold letter-default">
+                      08:35
+                    </h5>
+                    <p className="font-medium text-sm text-greyAsh-10 mt-[0.125rem]">
+                      Sun, 20 Aug
+                    </p>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <img
+                        src={AirplaneTakeoff}
+                        className="w-[1.25rem] h-[1.25rem]"
+                        alt="airplane take off"
+                      />
+                      <span className="text-md font-medium text-greyAsh-10">
+                        Duration: 1h 45m
+                      </span>
+                      <img
+                        src={AirplaneLanding}
+                        className="w-[1.25rem] h-[1.25rem]"
+                        alt="airplane landing"
+                      />
+                    </div>
+                    <img
+                      src={Duration}
+                      className="my-[0.688rem] w-[24.188rem] h-[0.5rem]"
+                    />
+                    <div className="flex items-center justify-between">
+                      <span className="text-md font-semibold text-black">
+                        LOS
+                      </span>
+                      <span className="text-md font-medium text-greyAsh-10">
+                        Direct
+                      </span>
+                      <span className="text-md font-semibold text-black">
+                        SIN
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="text-xxl text-black font-semibold letter-default">
+                      08:35
+                    </h5>
+                    <p className="font-medium text-sm text-greyAsh-10 mt-[0.125rem]">
+                      Sun, 20 Aug
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-[0.25rem]">
+                  <img
+                    src={Naira}
+                    className="w-[1.75rem] h-[1.75rem]"
+                    alt="naira"
+                  />
+                  <span className="text-2xl font-semibold text-black">
+                    123,450.00
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center pl-[1.5rem] pr-[2.625rem] border-y-[1px] border-y-greyAsh-70 gap-[0.75rem] py-[1.5rem]">
+                <span className="font-medium text-lg text-greyAsh">
+                  Facilities:
+                </span>
+                {flightFacilities.map(({ icon, facilityName }, key) => (
+                  <FacilitiesUi
+                    key={key}
+                    icon={icon as never}
+                    facilityName={facilityName}
+                  />
+                ))}
+              </div>
+            </ItinerariesCard>
+          </div>
+
+          {/* HOTELS */}
+          <div className="mt-[1rem] bg-greyAsh-60 pt-[1rem] pb-[3.25rem] px-[1.5rem] rounded-[0.25rem]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-[0.625rem]">
+                <img
+                  src={HotelIcon}
+                  className="w-[1.5rem] h-[1.5rem]"
+                  alt="flight"
+                />
+                <span className="font-semibold text-white text-lg">Hotels</span>
+              </div>
+              <NavLink to={`${appRoutes.hotelPage}`}>
+                {" "}
+                <CustomButton
+                  className="w-[9.563rem] h-[2.875] font-semibold !rounded-[0.25rem]"
+                  bgColor="bg-white"
+                  color="text-black"
+                >
+                  Add Hotels
+                </CustomButton>
+              </NavLink>
+            </div>
+            <ItinerariesCard type="Hotels">
+              <div className="flex justify-between pr-[2.625rem] pl-[1rem]">
+                <div className="w-1/2">
+                  <h4 className="text-black-10 font-semibold text-xl">
+                    Riviera Resort, Lekki
+                  </h4>
+                  <p className="font-medium text-md text-black mt-[0.125rem]">
+                    18, Kenneth Agbakuru Street, Off Access Bank Admiralty Way,
+                    Lekki Phase1
+                  </p>
+                  <div className="flex items-center gap-[0.875rem] mt-[0.5rem]">
+                    <Link to="" className="flex items-center gap-[0.25rem]">
+                      <img src={MapPin} className="w-[1.125rem] h-[1.125rem]" />
+                      <span className="text-primary font-medium text-md letter-default cursor-pointer hover:text-primary-10">
+                        Show in map
+                      </span>
+                    </Link>
+                    <div className="flex items-center gap-[0.25rem]">
+                      <img src={Star} className="w-[1.125rem] h-[1.125rem]" />
+                      <span className="text-greyAsh-10 font-medium text-md letter-default">
+                        8.5 (436)
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-[0.25rem]">
+                      <img src={Bed} className="w-[1.125rem] h-[1.125rem]" />
+                      <span className="text-greyAsh-10 font-medium text-md letter-default">
+                        King size room
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center gap-[0.25rem]">
+                    <img
+                      src={Naira}
+                      className="w-[1.75rem] h-[1.75rem]"
+                      alt="naira"
+                    />
+                    <span className="text-2xl font-semibold text-black">
+                      123,450.00
+                    </span>
+                  </div>
+                  <p className="text-black font-medium text-md mt-[0.25]">
+                    Total Price: NGN 560,000
+                  </p>
+                  <p className="text-black font-medium text-md mt-[0.25]">
+                    1 room x 10 nights incl. taxes
+                  </p>
+                </div>
+              </div>
+              <div className="pl-[1.5rem] pr-[2.625rem] border-y-[1px] border-y-greyAsh-70 flex items-center gap-[0.75rem] py-[1.5rem]">
+                <div className="flex items-center gap-[0.75rem] mr-auto">
+                  <span className="font-medium text-lg text-greyAsh">
+                    Facilities:
+                  </span>
+                  {hotelFacilities.map(({ icon, facilityName }, key) => (
+                    <FacilitiesUi
+                      key={key}
+                      icon={icon as never}
+                      facilityName={facilityName}
+                    />
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-[0.375rem]">
+                  <img
+                    src={CalenderBlank}
+                    className="w-[1.25rem] h-[1.25rem]"
+                  />
+                  <span className="font-medium text-lg text-greyAsh">
+                    Check In: 20-04-2024
+                  </span>
+                </div>
+                <div className="flex items-center gap-[0.375rem]">
+                  <img
+                    src={CalenderBlank}
+                    className="w-[1.25rem] h-[1.25rem]"
+                  />
+                  <span className="font-medium text-lg text-greyAsh">
+                    Check Out: 29-04-2024
+                  </span>
+                </div>
+              </div>
+            </ItinerariesCard>
+          </div>
+
+          {/* ACTIVITIES */}
+          <div className="mt-[1rem] bg-primary-10 pt-[1rem] pb-[3.25rem] px-[1.5rem] rounded-[0.25rem]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-[0.625rem]">
+                <img
+                  src={ActivitiesIcon}
+                  className="w-[1.5rem] h-[1.5rem]"
+                  alt="flight"
+                />
+                <span className="font-semibold text-white text-lg">
+                  Activities
+                </span>
+              </div>
+              <NavLink to={`${appRoutes.attractionsPage}`}>
+                <CustomButton
+                  className="w-[9.563rem] h-[2.875] font-semibold !rounded-[0.25rem]"
+                  bgColor="bg-white"
+                  color="text-primary"
+                >
+                  Add Activities
+                </CustomButton>
+              </NavLink>
+            </div>
+            <ItinerariesCard type="Activities">
+              <div className="flex justify-between pr-[2.625rem] pl-[1rem]">
+                <div className="w-1/2">
+                  <h4 className="text-black-10 font-semibold text-xl">
+                    Riviera Resort, Lekki
+                  </h4>
+                  <p className="font-medium text-md text-black mt-[0.125rem]">
+                    18, Kenneth Agbakuru Street, Off Access Bank Admiralty Way,
+                    Lekki Phase1
+                  </p>
+                  <div className="flex items-center gap-[0.875rem] mt-[0.5rem]">
+                    <Link to="" className="flex items-center gap-[0.25rem]">
+                      <img src={MapPin} className="w-[1.125rem] h-[1.125rem]" />
+                      <span className="text-primary font-medium text-md letter-default cursor-pointer hover:text-primary-10">
+                        Directions
+                      </span>
+                    </Link>
+                    <div className="flex items-center gap-[0.25rem]">
+                      <img src={Star} className="w-[1.125rem] h-[1.125rem]" />
+                      <span className="text-greyAsh-10 font-medium text-md letter-default">
+                        8.5 (436)
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-[0.25rem]">
+                      <img src={Clock} className="w-[1.125rem] h-[1.125rem]" />
+                      <span className="text-greyAsh-10 font-medium text-md letter-default">
+                        1 Hour
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center gap-[0.25rem]">
+                    <img
+                      src={Naira}
+                      className="w-[1.75rem] h-[1.75rem]"
+                      alt="naira"
+                    />
+                    <span className="text-2xl font-semibold text-black">
+                      123,450.00
+                    </span>
+                  </div>
+                  <p className="text-black font-medium text-md mt-[0.25]">
+                    10:30 AM on Mar 19
+                  </p>
+                </div>
+              </div>
+              <div className="pl-[1.5rem] pr-[2.625rem] border-y-[1px] border-y-greyAsh-70 flex   items-start gap-[0.75rem] py-[1.5rem]">
+                <div className="flex items-center gap-[0.75rem] mr-auto">
+                  <span className="font-medium text-lg text-greyAsh">
+                    What's Included:
+                  </span>
+                  <span className="font-medium text-lg text-greyAsh">
+                    Admission to the Empire State Building
+                  </span>
+                  <Link to="">
+                    <span className="text-primary font-medium text-md letter-default cursor-pointer hover:text-primary-10">
+                      See more
+                    </span>
+                  </Link>
+                </div>
+                <div className="flex items-center gap-[0.75rem]">
+                  <div className="bg-primary-20 rounded-[0.25rem] px-[0.5rem] py-[0.25rem] flex items-center justify-center">
+                    <span className="text-[0.75rem] font-medium text-white">
+                      Day 1 - (2)
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-[0.625rem]">
+                    <img
+                      src={CircleUp}
+                      className="w-[1.25rem] h-[1.25rem] cursor-pointer"
+                    />
+                    <img
+                      src={CircleDown}
+                      className="w-[1.25rem] h-[1.25rem] cursor-pointer"
+                    />
+                  </div>
+                </div>
+              </div>
+            </ItinerariesCard>
+          </div>
+        </section>
       </div>
     </HomeLayout>
   );

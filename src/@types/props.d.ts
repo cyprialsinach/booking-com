@@ -21,6 +21,8 @@ type IInput = PropsMap<IInputDTO>;
 
 type IButton = PropsMap<IButtonDTO>;
 
+type IItineriesCard = PropsMap<IItineriesCardDTO>;
+
 type IOption = {
   id: number;
   name: string;
