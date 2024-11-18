@@ -1,0 +1,40 @@
+type HotelDestinationRes = {
+  dest_id: string;
+  search_type: string;
+  image_url: string;
+  dest_type: string;
+  label: string;
+  hotels: number;
+  roundtrip: string;
+  longitude: number;
+  cc1: string;
+  type: string;
+  city_ufi: number;
+  region: string;
+  nr_hotels: number;
+  country: string;
+  latitude: number;
+  name: string;
+  city_name: string;
+  lc: string;
+};
+type HotelSearchRes = object;
+type HotelSearchParams = {
+  price_max: string;
+  price_min: string;
+  dest_id: string;
+  search_type: string;
+  arrival_date: string;
+  departure_date: string;
+  adults?: string;
+  children_age?: string;
+  room_qty?: string;
+  page_number?: string;
+  units?: string;
+  temperature_unit?: string;
+  languagecode?: string;
+  currency_code?: string;
+  sort_by?: string;
+    categories_filter?: string;
+};
+type HotelList = object

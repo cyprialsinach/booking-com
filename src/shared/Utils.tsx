@@ -1,15 +1,25 @@
-export default class Utils {
-  private static instance?: Utils;
-
+class Utils {
+  private static instance: Utils;
   static getInstance() {
     if (!this.instance) {
       this.instance = new Utils();
     }
+
     return this.instance;
   }
-
-  numberWithCommas(x: number) {
-    return x?.toString()?.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  numberWithCommas(x: any) {
+    if (typeof x === "number") {
+      // Ensure the number has at most two decimal places
+      x = x.toFixed(2);
+    } else {
+      // Attempt to parse it to a number if it's a string
+      const parsedNumber = parseFloat(x);
+      if (!isNaN(parsedNumber)) {
+        x = parsedNumber.toFixed(2);
+      }
+    }
+    // Add commas to the number and return
+    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   capitalizeFirstChar(word: string) {
@@ -17,3 +27,5 @@ export default class Utils {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
 }
+const utils = Utils.getInstance();
+export default utils;

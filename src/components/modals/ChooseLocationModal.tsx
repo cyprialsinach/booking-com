@@ -1,20 +1,11 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import CustomButton from "../../../../../components/CustomButton";
-import { useGetHotelDestination } from "../../services/Home.service";
+import CustomButton from "../CustomButton";
+import CustomInput from "../customInputs/Index";
+import MapPin from "../../assets/svg/mapPin.svg";
 
-interface ChooseLocationModalProps {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-}
-
-const ChooseLocationModal: React.FC<ChooseLocationModalProps> = ({
-  isOpen,
-  setIsOpen,
-}) => {
-  const { getDestination, loading } = useGetHotelDestination();
-
+const ChooseLocationModal: IModal = ({ isOpen, setIsOpen, data }) => {
   const formik = useFormik({
     initialValues: {
       location: "",
@@ -26,8 +17,8 @@ const ChooseLocationModal: React.FC<ChooseLocationModalProps> = ({
     }),
     onSubmit: async (values, { setSubmitting }) => {
       try {
-        const data = await getDestination(values.location);
-        console.log("Fetched data:", data); // Handle the data
+        const response = await data.getDestination(values.location);
+        console.log("Fetched data:", response); // Handle the data
         setIsOpen(false); // Close modal on success
       } catch (error) {
         console.error("Error fetching hotels:", error);
@@ -37,9 +28,8 @@ const ChooseLocationModal: React.FC<ChooseLocationModalProps> = ({
     },
   });
 
-   
-    if (!isOpen) return null;
-    
+  if (!isOpen) return null;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg p-6 max-w-md w-full">
@@ -49,7 +39,17 @@ const ChooseLocationModal: React.FC<ChooseLocationModalProps> = ({
         </p>
         <form onSubmit={formik.handleSubmit} className="mt-4 space-y-4">
           <div>
-            <input
+            <CustomInput
+              type="text"
+              // id="location"
+              name="location"
+              leftImage={<img src={MapPin} className="w-[1.5rem] h-[1.5rem]" />}
+              placeholder="Enter location (e.g., city, country)"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.location}
+            />
+            {/* <input
               type="text"
               id="location"
               name="location"
@@ -58,28 +58,31 @@ const ChooseLocationModal: React.FC<ChooseLocationModalProps> = ({
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.location}
-            />
+            /> */}
             {formik.touched.location && formik.errors.location && (
-              <p className="text-red-500 text-xs mt-1">
+              <p className="text-red-500 text-sm mt-1">
                 {formik.errors.location}
               </p>
+            )}
+            {data.apiError && (
+              <p className="text-red-500 text-sm mt-1">{data.apiError}</p>
             )}
           </div>
           <CustomButton
             type="submit"
             className="w-full"
-            disabled={formik.isSubmitting || loading}
+            disabled={formik.isSubmitting || data.loading}
           >
-            {loading ? "Loading..." : "Find Hotels"}
+            {data.loading ? "Loading..." : "Find Hotels"}
           </CustomButton>
         </form>
 
         <CustomButton
           onClick={() => setIsOpen(!isOpen)}
           className="w-full mt-4"
-          color="text-primary"
+          color="text-red-600"
           bgColor="bg-red-10"
-          disabled={formik.isSubmitting || loading}
+          disabled={formik.isSubmitting || data.loading}
         >
           Cancel
         </CustomButton>

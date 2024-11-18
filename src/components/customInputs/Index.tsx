@@ -1,10 +1,13 @@
+import DateInput from "./DateInput";
+import NumberInput from "./NumberInput";
 import StringInput from "./StringInput";
 // import SelectInput from "./SelectInput";
 
 const CustomInput: IInput = (props) => {
-    const { ...restProps } = props;
+    const { type, ...restProps } = props;
     
-//   if (type === "select") return <SelectInput {...restProps} />;
+  if (type === "date") return <DateInput {...restProps} />;
+  if (type === "number") return <NumberInput {...restProps} />;
 
   return <StringInput {...restProps} />;
 };

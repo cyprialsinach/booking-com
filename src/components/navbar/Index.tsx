@@ -12,47 +12,48 @@ import HandCoinsIcon from "../../assets/svg/handCoins.svg";
 import BellIcon from "../../assets/svg/bell.svg";
 import BasketIcon from "../../assets/svg/basket.svg";
 import PlusSquareIcon from "../../assets/svg/plusSquare.svg";
+import { homeRoutes } from "../../shared/routes/routes";
 
 const navPageLinks: INavLinks[] = [
   {
-    slug: "home",
+    route: homeRoutes.homepage,
     label: "home",
     icon: HomeIcon,
   },
   {
-    slug: "dashboard",
+    route: "dashboard",
     label: "Dashboard",
     icon: ChartPieIcon,
   },
   {
-    slug: "wallet",
+    route: "wallet",
     label: "Wallet",
     icon: WalletIcon,
   },
   {
-    slug: "plan-a-trip",
+    route: "plan-a-trip",
     label: "Plan a trip",
     icon: ListCheckIcon,
   },
   {
-    slug: "commission-for-life",
+    route: "commission-for-life",
     label: "Commission for life",
     icon: HandCoinsIcon,
   },
 ];
 const navLinks: INavLinks[] = [
   {
-    slug: "notification",
+    route: "notification",
     label: "Notification",
     icon: BellIcon,
   },
   {
-    slug: "cart",
+    route: "cart",
     label: "Cart",
     icon: BasketIcon,
   },
   {
-    slug: "create",
+    route: "create",
     label: "Create",
     icon: PlusSquareIcon,
   },
