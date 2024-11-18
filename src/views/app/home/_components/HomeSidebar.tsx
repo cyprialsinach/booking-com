@@ -10,47 +10,47 @@ import VacationPackageIcon from "../../../../assets/svg/package.svg";
 import UpDownIcon from "../../../../assets/svg/upDown.svg";
 import CustomButton from "../../../../components/CustomButton";
 import { NavLink } from "react-router-dom";
-import { appRoutes } from "../../../../shared/routes/routes";
+import { homeRoutes } from "../../../../shared/routes/routes";
 
 const HomeSidebar = () => {
   const SideBarNavLinks: INavLinks[] = [
     {
-      slug: appRoutes.attractionsPage,
+      route: homeRoutes.attractionsPage,
       label: "Activities",
       icon: RoadHorizonIcon,
     },
     {
-      slug: appRoutes.hotelPage,
+      route: homeRoutes.hotelPage,
       label: "Hotels",
       icon: HotelsIcon,
     },
     {
-      slug: appRoutes.flightPage,
+      route: homeRoutes.flightPage,
       label: "Flights",
       icon: FlightsIcon,
     },
     {
-      slug: "study",
+      route: homeRoutes.studyPage,
       label: "Study",
       icon: StudyIcon,
     },
     {
-      slug: "visa",
+      route: homeRoutes.visaPage,
       label: "Visa",
       icon: VisaIcon,
     },
     {
-      slug: "immigration",
+      route: homeRoutes.immigrationPage,
       label: "Immigration",
       icon: ImmigrationIcon,
     },
     {
-      slug: "medical",
+      route: homeRoutes.medicalPage,
       label: "Medical",
       icon: MedicalIcon,
     },
     {
-      slug: "vacation-packages",
+      route: homeRoutes.vacationPackagesPage,
       label: "Vacation Packages",
       icon: VacationPackageIcon,
     },
@@ -61,18 +61,18 @@ const HomeSidebar = () => {
         <nav>
           <ul className="flex flex-col gap-[0.75rem]">
             {SideBarNavLinks.map(
-              ({ slug, icon, label }: INavLinks, key: number) => (
+              ({ route, icon, label }: INavLinks, key: number) => (
                 <li key={key}>
                   <NavLink
-                    to={`${slug}`}
+                    to={`${route}`}
                     className="py-[0.75rem] px-[0.875rem] flex items-center gap-[0.5rem]"
                   >
                     <img
                       src={icon}
                       className="w-[2rem] h-[2rem]"
-                      alt={`${slug} image`}
+                      alt={`${route} image`}
                     />
-                    <span className="navNavLinkText">{label}</span>
+                    <span className="navLinkText">{label}</span>
                   </NavLink>
                 </li>
               )

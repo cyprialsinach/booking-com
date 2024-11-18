@@ -7,12 +7,18 @@ type LoginDTO = object;
 
 type NavbarDTO = object;
 
+type IModalDTO = {
+  isOpen: boolean;
+  setIsOpen: (data?: any) => void;
+  data?: any;
+};
+
 type IItineriesCardDTO = {
 type: 'Flights' | 'Hotels' | 'Activities'
 }
 
 type IInputDTO = {
-  type?: "text" | "select";
+  type?: "text" | "select"|"date" | "number";
   leftImage?: ReactNode;
   rightImage?: ReactNode;
   className?: string;
@@ -24,7 +30,9 @@ type IInputDTO = {
   placeholder?: string;
   errorText?: string;
   disabled?: boolean;
-  onBlur?: FocusEventHandler<HTMLInputElement> | undefined;
+  onBlur?:
+  FocusEventHandler<HTMLInputElement> | undefined;
+  min?:number
 };
 type IButton = {
   type?: "submit";

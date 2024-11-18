@@ -21,6 +21,8 @@ type IInput = PropsMap<IInputDTO>;
 
 type IButton = PropsMap<IButtonDTO>;
 
+type IModal = PropsMap<IModalDTO>;
+
 type IItineriesCard = PropsMap<IItineriesCardDTO>;
 
 type IOption = {
@@ -28,7 +30,7 @@ type IOption = {
   name: string;
 };
 type INavLinks = {
-  slug?: string;
+  route?: string;
   label: string;
   icon: string;
 };

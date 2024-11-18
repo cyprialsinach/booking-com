@@ -1,5 +1,6 @@
 import React from "react";
 import XCancel from "../../../../assets/svg/xCancel.svg";
+import BannerImg from "../../../../assets/img/banner.png";
 import Carousel from "react-multi-carousel";
 import ButtonOne from "../../../../assets/svg/circleRight.svg";
 import ButtonTwo from "../../../../assets/svg/circleLeft.svg";
@@ -57,18 +58,19 @@ const ItineriesCard: IItineriesCard = ({ type, children }) => {
               responsive={responsive}
               arrows={false}
               customButtonGroup={<ButtonGroup />}
+              className="h-full"
             >
               <div>
-                <img src={XCancel} className="w-full h-full" />
+                <img src={BannerImg} className="w-full h-full object-cover h-10" />
               </div>
               <div>
-                <img src={XCancel} className="w-full h-full" />
+                <img src={BannerImg} className="w-full h-full object-cover h-10" />
               </div>
               <div>
-                <img src={XCancel} className="w-full h-full" />
+                <img src={BannerImg} className="w-full h-full object-cover h-10" />
               </div>
               <div>
-                <img src={XCancel} className="w-full h-full" />
+                <img src={BannerImg} className="w-full h-full object-cover h-10" />
               </div>
             </Carousel>
           </div>
